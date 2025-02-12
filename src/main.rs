@@ -1,7 +1,26 @@
-fn make_tuple<T, U>(first: T, second: U) -> (T, U) {
-    (first, second)
+#[derive(Debug)]
+struct TreasureChest<T> {
+    captain: String,
+    treasure: T,
 }
 
 fn main() {
-    make_tuple(String::from("Tacobell"), String::from("Banana"));
+    let gold_chest: TreasureChest<&str> = TreasureChest {
+        captain: String::from("Firebeard"),
+        treasure: "Gold",
+    };
+
+    let silver_chest: TreasureChest<i32> = TreasureChest {
+        captain: String::from("Blackbeard"),
+        treasure: 8999,
+    };
+
+    let special_chest: TreasureChest<[&str; 3]> = TreasureChest {
+        captain: String::from("Captain Underpants"),
+        treasure: ["hi", "Hello", "Howdy"]
+    };
+
+    println!("{:?}", gold_chest);
+    println!("{:?}", silver_chest);
+    println!("{:?}", special_chest);
 }
