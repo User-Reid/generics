@@ -8,6 +8,7 @@ fn main() {
     let onions: Cheeseseak<String> = Cheesesteak::Topping(String::from("Onions"));
     let topping: String = String::from("Bacon");
     let bacon: Cheesesteak<&String> = Cheesesteak(&topping);
-    
+
     let mut plain: Cheesesteak<String> = Cheesesteak::Plain;
     plain = Cheesesteak::Topping(String::from("Chicken"));
+}
